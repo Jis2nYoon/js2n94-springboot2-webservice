@@ -1,0 +1,21 @@
+spring.security.oauth2.client.registration.google.client-id=
+spring.security.oauth2.client.registration.google.client-secret=
+spring.security.oauth2.client.registration.google.scope=profile,email
+
+많은 예제에서는 이 scope를 별도로 등록하지 않고 있습니다.
+기본값이 openid,profile,email이기 때문입니다.
+
+강제로 profile,email를 등록한 이유는 openid라는 scope가 있으면 Open id Provider로 인식하기 때문입니다.
+
+이렇게 되면 OpenId Provider인 서비스(구글)과 그렇지 않은 서비스(네이버/카카오 등)로 나눠서 각각 OAuth2Service를 만들어야 합니다.
+
+하나의 OAuth2Service로 사용하기 위해 일부러 openid scope를 빼고 등록합니다.
+
+
+
+//
+
+스프링 부트에서는 properties의 이름을 applicaion-{name}.properties로 만들면 {name}이라는 이름의 profile이 생성되어 이를 통해 관리할 수 있습니다.
+즉, profile={name} 라는 식으로 호출하면 해당 properties의 설정들을 가져올 수 있습니다. 호출하는 방식은 여러 방식이 있지만 이 책에서는 스프링부트의 기본 설정 파일인
+application.properties에서 application-oauth.properties를 포함하도록 구성합니다.
+spring.profiles.include=oauth

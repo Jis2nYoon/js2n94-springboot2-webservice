@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
+@Table(name="post_base")
 public class Posts extends BaseTimeEntity {
 
     @Id

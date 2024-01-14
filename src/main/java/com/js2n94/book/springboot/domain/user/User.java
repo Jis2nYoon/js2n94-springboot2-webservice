@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 @Getter
 @NoArgsConstructor
 @Entity
+@Table(name="user_base")
 public class User extends BaseTimeEntity {
 
     @Id

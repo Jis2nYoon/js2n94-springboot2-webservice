@@ -1,4 +1,4 @@
-package com.js2n94.book.springboot.config.auth;
+package com.js2n94.book.springboot.config.auth.dto;
 
 import com.js2n94.book.springboot.domain.user.Role;
 import com.js2n94.book.springboot.domain.user.User;

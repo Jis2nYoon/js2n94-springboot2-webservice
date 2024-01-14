@@ -1,5 +1,6 @@
 package com.js2n94.book.springboot.config.auth;
 
+import com.js2n94.book.springboot.config.auth.dto.OAuthAttributes;
 import com.js2n94.book.springboot.config.auth.dto.SessionUser;
 import com.js2n94.book.springboot.domain.user.User;
 import com.js2n94.book.springboot.domain.user.UserRepository;

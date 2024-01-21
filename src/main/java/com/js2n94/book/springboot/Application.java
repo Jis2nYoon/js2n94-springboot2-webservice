@@ -6,7 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-@EnableJpaAuditing // JPA Auditing 활성화
+//@EnableJpaAuditing // JPA Auditing 활성화 // 삭제하고 JpaConfig쪽에 분리함.
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 

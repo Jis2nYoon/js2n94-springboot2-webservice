@@ -14,10 +14,9 @@ script: "./gradlew clean build"
 
 before_install:
   - chmod +x gradlew
-  - cd Jis2nYoon
-  - zip -r js2n94-springboot2-webservice *
-  - mkdir -p deploy
-  - mv js2n94-springboot2-webservice.zip deploy/js2n94-springboot2-webservice.zip
+  - sudo zip -r js2n94-springboot2-webservice *
+  - sudo mkdir -p deploy
+  - sudo mv js2n94-springboot2-webservice.zip deploy/js2n94-springboot2-webservice.zip
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY

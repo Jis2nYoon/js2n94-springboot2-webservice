@@ -6,7 +6,8 @@ before_install:
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    secret_access_key:
+      secure:  $AWS_SECRET_KEY
     bucket: js2n94-springboot-build
     region: ap-northeast-2
     skip_cleanup: true

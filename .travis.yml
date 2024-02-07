@@ -24,7 +24,7 @@ deploy:
     bucket: js2n94-springboot-build
     region: ap-northeast-2
     skip_cleanup: true
-    acl: None
+    acl: private
     local_dir: deploy
     wait-until-deployed: true
 

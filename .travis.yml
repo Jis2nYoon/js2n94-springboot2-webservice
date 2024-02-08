@@ -33,8 +33,8 @@ deploy:
     bucket: js2n94-springboot-build
     key: js2n94-springboot2-webservice.zip
     bundle_type: zip
-    application: web_deploy
-    deployment_group: web_deploy_group
+    application: js2n94-springboot2-webservice
+    deployment_group: js2n94-springboot2-webservice-group
     region: ap-northeast-2
     wait-until-deployed: true
 

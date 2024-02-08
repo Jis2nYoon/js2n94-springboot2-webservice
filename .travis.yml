@@ -22,6 +22,7 @@ before_deploy:
   - sudo cp scripts/*.sh before-deploy/
   - sudo cp appspec.yml before-deploy/
   - sudo cp build/libs/*.jar before-deploy/
+  - cd before-deploy && sudo zip -r before-deploy *
   - cd ../ && sudo mkdir -p deploy
   - sudo mv before-deploy/before-deploy.zip deploy/js2n94-springboot2-project.zip
 deploy:

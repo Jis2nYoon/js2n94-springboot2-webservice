@@ -17,14 +17,13 @@ before_install:
 script: "./gradlew clean build"
 
 before_deploy:
-  - sudo mkdir -p ~/app/step3/before-deploy
-  - sudo chmod +x ~/app/step3/before-deploy
-  - sudo cp scripts/*.sh ~/app/step3/before-deploy/
-  - sudo cp appspec.yml ~/app/step3/before-deploy/
-  - sudo cp build/libs/*.jar ~/app/step3/before-deploy/
-  - sudo zip -r ~/app/step3/before-deploy *
-  - sudo mkdir -p ../deploy
-  - sudo mv ~/app/step3/before-deploy/before-deploy.zip deploy/js2n94-springboot2-project.zip
+  - sudo mkdir -p ~/app/step2/before-deploy
+  - sudo chmod +x ~/app/step2/before-deploy
+  - sudo cp scripts/*.sh ~/app/step2/before-deploy/
+  - sudo cp appspec.yml ~/app/step2/before-deploy/
+  - sudo cp build/libs/*.jar ~/app/step2/before-deploy/
+  - sudo zip -r ~/app/step2/before-deploy *
+  - sudo mv ~/app/step2/before-deploy/before-deploy.zip ~/app/step2/zip/js2n94-springboot2-project.zip
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY

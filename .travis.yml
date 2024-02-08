@@ -23,7 +23,7 @@ before_deploy:
   - sudo cp appspec.yml ~/app/step2/before-deploy/
   - sudo cp build/libs/*.jar ~/app/step2/before-deploy/
   - sudo zip -r ~/app/step2/before-deploy *
-  - sudo mv ~/app/step2/before-deploy/before-deploy.zip ~/app/step2/zip/js2n94-springboot2-project.zip
+  - sudo mv ~/app/step2/before-deploy.zip ~/app/step2/zip/js2n94-springboot2-project.zip
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY

@@ -10,13 +10,16 @@ cache:
   directories:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
-script: "./gradlew clean build"
 
 before_install:
   - chmod +x gradlew
-  - sudo zip -r js2n94-springboot2-webservice *
+
+script: "./gradlew clean build"
+
+before_deploy:
+  - sudo zip -r js2n94-springboot2-project *
   - sudo mkdir -p deploy
-  - sudo mv js2n94-springboot2-webservice.zip deploy/js2n94-springboot2-webservice.zip
+  - sudo mv js2n94-springboot2-project.zip deploy/js2n94-springboot2-project.zip
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
@@ -27,16 +30,18 @@ deploy:
     acl: private
     local_dir: deploy
     wait-until-deployed: true
+
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
     bucket: js2n94-springboot-build
-    key: js2n94-springboot2-webservice.zip
+    key: js2n94-springboot2-project.zip
     bundle_type: zip
     application: js2n94-springboot2-webservice
     deployment_group: js2n94-springboot2-webservice-group
-    region: ap-northeast-2c
+    region: ap-northeast-2
     wait-until-deployed: true
+
 
 # CI 실행 완료 시 메일로 알람.
 notifications:

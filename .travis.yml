@@ -17,6 +17,7 @@ before_install:
 script: "./gradlew clean build"
 
 before_deploy:
+  - sudo - i
   - sudo cd ~/app/step3/
   - sudo mkdir -p ./before-deploy
   - sudo cp scripts/*.sh before-deploy/

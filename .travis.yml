@@ -35,7 +35,7 @@ deploy:
     bundle_type: zip
     application: js2n94-springboot2-webservice
     deployment_group: js2n94-springboot2-webservice-group
-    region: ap-northeast-2
+    region: ap-northeast-2c
     wait-until-deployed: true
 
 # CI 실행 완료 시 메일로 알람.

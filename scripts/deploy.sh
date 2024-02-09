@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 REPOSITORY=/home/ec2-user/app/step2
 PROJECT_NAME=js2n94-springboot2-webservice
